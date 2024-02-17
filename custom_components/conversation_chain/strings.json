@@ -3,8 +3,8 @@
     "step": {
       "user": {
         "data": {
-          "integration_name": "Name of your Chain",
-          "agent_count": "Number of Agents to chain"
+          "name": "[%key:common::config_flow::data::name%]",
+          "count": "[%key:common::config_flow::data::count%]"
         }
       }
     }

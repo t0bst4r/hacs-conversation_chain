@@ -3,8 +3,8 @@
     "step": {
       "user": {
         "data": {
-          "integration_name": "Name of your Chain",
-          "agent_count": "Number of Agents to chain"
+          "name": "Name of your Chain",
+          "count": "Number of Agents to chain"
         }
       }
     }

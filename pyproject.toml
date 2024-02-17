@@ -17,6 +17,11 @@ Homepage = "https://github.com/t0bst4r/hacs-conversation_chain"
 Issues = "https://github.com/t0bst4r/hacs-conversation_chain/issues"
 Releases = "https://github.com/t0bst4r/hacs-conversation_chain/releases"
 
+[tool.pytest.ini_options]
+filterwarnings = [
+    "ignore::DeprecationWarning:homeassistant.components.*:"
+]
+
 [tool.commitizen]
 version = "0.0.0"
 version_files = [
