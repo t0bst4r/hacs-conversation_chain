@@ -2,11 +2,12 @@ from __future__ import annotations
 
 from typing import Literal
 
-from .const import DOMAIN, CONF_AGENT_COUNT, conf_agent
 from homeassistant.components import conversation
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import MATCH_ALL
 from homeassistant.core import HomeAssistant
+
+from .const import DOMAIN, CONF_AGENT_COUNT, conf_agent
 
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:

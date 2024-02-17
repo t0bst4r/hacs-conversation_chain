@@ -1,0 +1,18 @@
+name: Pull Request
+on: [ pull_request ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: pip install -r requirements-dev.txt -r requirements.txt
+      - name: Commitlint
+        run: cz check --rev-range main..HEAD
+      - name: Lint
+        run: flake8 custom_components/
+      - name: Test
+        run: pytest custom_components/

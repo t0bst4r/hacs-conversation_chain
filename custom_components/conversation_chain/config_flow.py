@@ -3,9 +3,9 @@ from __future__ import annotations
 from typing import Any
 
 import voluptuous as vol
-
 from homeassistant import config_entries, data_entry_flow
 from homeassistant.helpers.selector import ConversationAgentSelector, ConversationAgentSelectorConfig
+
 from .const import DOMAIN, CONF_INTEGRATION_NAME, CONF_AGENT_COUNT, conf_agent
 
 
