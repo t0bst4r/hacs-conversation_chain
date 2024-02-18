@@ -1,5 +1,5 @@
 [project]
-version = "0.1.0"
+version = "0.1.1"
 name = "conversation_chain"
 description = "This Custom Component provides a new integration to create chains of conversation agent."
 readme = "README.md"
@@ -23,7 +23,7 @@ filterwarnings = [
 ]
 
 [tool.commitizen]
-version = "0.1.0"
+version = "0.1.1"
 version_files = [
     "pyproject.toml:version",
     "custom_components/conversation_chain/manifest.json:version"
