@@ -18,6 +18,7 @@ Issues = "https://github.com/t0bst4r/hacs-conversation_chain/issues"
 Releases = "https://github.com/t0bst4r/hacs-conversation_chain/releases"
 
 [tool.pytest.ini_options]
+asyncio_mode = "auto"
 filterwarnings = [
     "ignore::DeprecationWarning:homeassistant.components.*:"
 ]

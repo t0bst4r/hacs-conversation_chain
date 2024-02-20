@@ -4,6 +4,7 @@ from homeassistant.components import conversation
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import MATCH_ALL
 from homeassistant.core import HomeAssistant
+
 from .load_manifest import load_manifest
 from ..flow import CONF_COUNT, conf_agent
 
@@ -13,15 +14,6 @@ __all__ = [
 
 
 class ConversationChainAgent(conversation.AbstractConversationAgent):
-
-    @staticmethod
-    def install(hass: HomeAssistant, entry: ConfigEntry):
-        agent = ConversationChainAgent(hass, entry)
-        conversation.async_set_agent(hass, entry, agent)
-
-    @staticmethod
-    def uninstall(hass: HomeAssistant, entry: ConfigEntry):
-        conversation.async_unset_agent(hass, entry)
 
     def __init__(self, hass: HomeAssistant, entry: ConfigEntry):
         self.hass = hass
