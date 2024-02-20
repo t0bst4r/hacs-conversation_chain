@@ -30,13 +30,23 @@ jobs:
       - name: Test
         run: pytest test/
 
-      - name: Versioning and Tags
+      - name: Versioning
         run: |
-          cz bump --changelog --yes
-          git push origin main
-          git push origin --tags
+          set +e # disable fail on exit code
+          echo "PREVIOUS_TAG=$(cz version --project)" >> $GITHUB_ENV
+          cz bump --changelog --changelog-to-stdout --yes > RELEASE_NOTES.md
           echo "RELEASE_TAG=$(cz version --project)" >> $GITHUB_ENV
-      - name: GitHub Release
+          # only fail if exit code is not 0 or 21
+          EXIT_CODE=$?
+          if [ $EXIT_CODE -ne 21 ]; then
+            exit "$EXIT_CODE"
+          fi
+
+      - name: Push and Release
+        if: env.PREVIOUS_TAG != env.RELEASE_TAG
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh release create $RELEASE_TAG --notes-file CHANGELOG.md --verify-tag
+        run: |
+          git push origin main
+          git push origin --tags
+          gh release create $RELEASE_TAG --notes-file RELEASE_NOTES.md --verify-tag
