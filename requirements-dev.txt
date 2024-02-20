@@ -1,4 +1,9 @@
+# linting
 pre-commit~=3.6.1
 commitizen~=3.15.0
 flake8~=7.0.0
-pytest~=8.0.1
+
+# testing
+pytest~=7.4.4
+pytest-asyncio~=0.23.4
+pytest-homeassistant-custom-component~=0.13.101
