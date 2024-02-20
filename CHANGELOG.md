@@ -1,3 +1,9 @@
+## 0.1.2 (2024-02-20)
+
+### Fix
+
+- removed install anti-pattern and configured tests properly
+
 ## 0.1.1 (2024-02-18)
 
 ### Fix
