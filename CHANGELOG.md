@@ -1,3 +1,9 @@
+## 0.2.0 (2024-02-26)
+
+### Fix
+
+- INTEGRATION IS DEPRECATED. SEE README
+
 ## 0.1.2 (2024-02-20)
 
 ### Fix
