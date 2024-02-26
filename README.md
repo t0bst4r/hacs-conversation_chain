@@ -1,3 +1,8 @@
+> [!CAUTION]
+> This integration is no longer maintained. Please migrate your system to use [ha-fallback-conversation](https://github.com/m50/ha-fallback-conversation) by [m50](https://github.com/m50).
+>
+> It covers the same features as provided by this integration.
+
 # Conversation Chain for Home Assistant
 
 This Custom Component provides a new integration to create chains of conversation agent.
